@@ -22,9 +22,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun dispatchKeyEvent(event: KeyEvent?): Boolean {
+        super.dispatchKeyEvent(event)
         if (event?.keyCode == KeyEvent.KEYCODE_VOLUME_UP || event?.keyCode == KeyEvent.KEYCODE_VOLUME_DOWN){
             vv_bar.setCurrentVolume(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC))
         }
-        return super.dispatchKeyEvent(event)
+        return false
     }
 }
