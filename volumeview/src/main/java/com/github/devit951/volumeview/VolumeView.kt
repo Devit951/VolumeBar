@@ -56,12 +56,7 @@ class VolumeView @JvmOverloads constructor(context: Context, attrs: AttributeSet
 
     private fun drawCircle(canvas: Canvas){
         val radius = height / 2f
-        var circleX = (width / maxVolumeCount) * currentVolumeCount.toFloat()
-        if (circleX == 0f){
-            circleX += radius
-        } else if (circleX + radius >= width) {
-            circleX -= (radius - 10)
-        }
+        val circleX = ((width - height) / maxVolumeCount) * currentVolumeCount.toFloat() + radius
         canvas.drawCircle(circleX, height / 2f, height / 2f, circlePaint)
     }
 
